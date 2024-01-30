@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "CppBaseActor.generated.h"
 
+
 UENUM(BlueprintType)
 enum class EMovementState : uint8 {
 	Mobility,
