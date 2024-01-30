@@ -41,6 +41,18 @@ protected:
 	UFUNCTION(BlueprintCallable)
 	void ShowActorInformation();
 
+	UPROPERTY(EditInstanceOnly)
+	double Amplitude = 10.0;
+		
+	UPROPERTY(EditInstanceOnly)
+	double Frequency = 10.0;
+
+	UPROPERTY(EditInstanceOnly)
+	FVector InitialLocation{10.0f, 10.0f, 10.0f};
+
+	UFUNCTION(BlueprintCallable)
+	void SinMovement();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
