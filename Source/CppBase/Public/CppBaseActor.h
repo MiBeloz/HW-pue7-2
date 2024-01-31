@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Engine/World.h"
 #include "GameFramework/Actor.h"
 #include "CppBaseActor.generated.h"
 
@@ -42,13 +43,13 @@ protected:
 	void ShowActorInformation();
 
 	UPROPERTY(EditInstanceOnly)
-	double Amplitude = 10.0;
+	double Amplitude = 70.0;
 		
 	UPROPERTY(EditInstanceOnly)
-	double Frequency = 10.0;
+	double Frequency = 4.0;
 
-	UPROPERTY(EditInstanceOnly)
-	FVector InitialLocation{10.0f, 10.0f, 10.0f};
+	UPROPERTY(EditDefaultsOnly)
+	FVector InitialLocation;
 
 	UFUNCTION(BlueprintCallable)
 	void SinMovement();

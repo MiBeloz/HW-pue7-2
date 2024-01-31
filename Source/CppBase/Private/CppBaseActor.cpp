@@ -16,6 +16,15 @@ ACppBaseActor::ACppBaseActor()
 void ACppBaseActor::BeginPlay()
 {
 	Super::BeginPlay();
+	InitialLocation = GetActorLocation();
+}
+
+void ACppBaseActor::SinMovement() {
+	UWorld* World = GetWorld();
+	double TimeBrought = World->GetTimeSeconds();
+	FVector NewActorLocation = InitialLocation;
+	NewActorLocation.Z = InitialLocation.Z + Amplitude * FMath::Sin(Frequency * TimeBrought);
+	SetActorLocation(NewActorLocation);
 }
 
 // Called every frame
